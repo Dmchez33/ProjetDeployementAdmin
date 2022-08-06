@@ -1,0 +1,32 @@
+<!-- <div class="row">
+  <div class="col col-md-6 col-ms-2 shadow rounded m-2">
+
+  </div>
+</div> -->
+
+
+<table>
+  <tr>
+    <td *ngFor="let lit of MessageList" class="shadow rounded m-2">
+      <div class="card">
+        
+        <div class="card-header text-center" *ngIf="auth.controlEmail == lit.email">
+          Envoyre Par: {{lit.nom | uppercase}} &nbsp; {{lit.prenom}} <br>
+          N°MATRICULE: {{lit.matricule | uppercase}} <br>
+          CLASSE: {{lit.classe}} <br>
+          FILIERE: {{lit.filiere}} <br>
+        </div>
+        <div class="card-body" *ngIf="auth.controlEmail == lit.email">
+          <h5 class="card-title">
+            {{lit.titre}}
+          </h5>
+          <p class="card-text">{{lit.contenue}}</p>
+
+        </div>
+        <div class="card-footer text-muted" *ngIf="auth.controlEmail == lit.email">
+          Envoyez le : {{lit.dateEnvoi}}
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>

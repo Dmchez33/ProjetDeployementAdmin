@@ -1,0 +1,24 @@
+.form-container{
+    display: block;
+    max-width: 70em;
+    margin: auto;
+    background-color: rgb(231, 247, 252);
+    padding: 5em;
+    border-radius: 10px;
+    
+}
+
+.color{
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+.color:hover{
+    color: white;
+    background-image: radial-gradient(circle, #320537, #373a74, #166eab, #00a4d3, #12daeb);
+}
+.content{
+    height: 50vw;
+    background-image: url("../../assets/img/e-learning.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}

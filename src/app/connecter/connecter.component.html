@@ -1,0 +1,87 @@
+<div class="containter">
+    <div class="row d-flex content justify-content-center align-items-center shadow-lg">
+        <div class="col-md-5 ">
+            <div class="box img shadow bg-white p-4">
+                <h3 class="md-4 text-center fs-1"> Connexion </h3>
+                <form   class="mb-3">
+                    
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" [(ngModel)]="email" required class="form-control rounded-0" id="floatingInput" placeholder="name@gmail.com"/>
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" [(ngModel)]="password" required class="form-control rounded-0" id="floatingPassword" placeholder="name@gmail.com"/>
+                        <label for="floatingPassword">Mot de Passe</label>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="button" (click)="login()" class="btn color btn-lg border-0 rounded-0">
+                            Connecter
+                        </button>
+                    </div>
+                   <!-- <div class="alert alert-danger" role="alert" >
+                        Veuillez remplir tous les champs #signForm="ngForm" (submit)="onSubmit(signForm)" *ngIf="isFormValid" *ngIf="areCredentialsInvalid"
+                    </div>
+                    <div class="alert alert-danger" role="alert" >
+                        Le prenom, l'email ou le mot de passe invalide
+                    </div>-->
+                    <div class="forgot-password-link mb-3 text-end">
+                        <a href="mot-passe-oublie" class="text-decoration-none" > Mot de Passe Oublié? </a>
+                    </div>
+                    
+                </form>
+                <!-- <div class="sign-up-accounts mb-3  ">
+                    <p class="text-center">
+                        <a href="#" title="Veillez vous inscrire" class="text-decoration-none">Inscrivez vous si vous n'avez pas de compte </a>
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ANCIEN FORMULAIRE DE CONNECTION -->
+
+<!-- <div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <h4 class="text-dark text-muted">Connecter</h4>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                          <input type="email" class="form-control" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Mot de Passe</label>
+                          <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                        </div>
+                        <button type="button" class="btn btn-info" (click)="login()">Connecter</button>
+                        <div class="row">
+                            <!-- <div class="col-md-6">
+                                <a href="registre" style="text-decoration: none;">Need Account ? <span class="text-danger">Register</span></a>
+                            </div> 
+                            <div class="col-md-8">
+                                <a href="mot-passe-oublie" class="text-dark" style="text-decoration: none;"> Mot de Passe Oublié? </a>
+                            </div>
+                        </div>
+                        <!-- <div class="row mt-2">
+                            <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+                                <div class="card shadow text-center">
+                                    <div class="card-body">
+                                        <img src="../../../assets/icons8-google-48.png" alt="" height="24px" width="24px"> Sign In with Google
+                                    </div>
+                                </div>
+                            </a>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div> -->

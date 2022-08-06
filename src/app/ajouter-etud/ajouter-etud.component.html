@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="position-relative mb-5" *ngIf="auth.isAdmin">
+    <div class="position-absolute top-0 end-0">
+      <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#AddEtudiant"><i
+          class="bi bi-plus-square"></i> &nbsp; Authentifier un Etudiant</button>
+    </div>
+  </div>
+  <div class="modal fade" id="AddEtudiant" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLabel">Authentification de l'etudiant </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card border-0 shadow p-3">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input required type="email" class="form-control" name="email" [(ngModel)]="Authemail">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mot de Passe</label>
+                <input required type="password" class="form-control" name="password" [(ngModel)]="Authpassword">
+              </div>
+              <button type="button" class="btn btn-info" (click)="register()" data-bs-dismiss="modal">Authentifier</button>
+              <!-- <div class="row">
+                  <div class="col-md-6">
+                      <a href="/login" style="text-decoration: none;">Have an account ? <span class="text-danger">Login</span></a>
+                  </div>
+              </div> -->
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col mt-2">
+      <h5 class="text-danger"> Liste Etudiant</h5>
+      <div class="card p-3 shadow">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Prenom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Filiere</th>
+                <th scope="col">Classe</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Matricule</th>
+                <th scope="col">Mot de Passe</th>
+                <th scope="col" *ngIf="auth.isAdmin">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let studnet of studentsList">
+                <td>{{studnet.first_name}}</td>
+                <td>{{studnet.last_name}}</td>
+                <td>{{studnet.filiere}}</td>
+                <td>{{studnet.classe}}</td>
+                <td>{{studnet.tel}}</td>
+                <td>{{studnet.email}}</td>
+                <td>{{studnet.matricule}}</td>
+                <td>{{studnet.motPasse}}</td>
+                <td *ngIf="auth.isAdmin">
+                  <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                    data-bs-target="#editEmployee" (click)="editEmployee(studnet)"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-outline-danger" (click)="deleteStudent(studnet)"><i class="bi bi-trash"></i></button>
+                </td>
+
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier Les informations de L'etudiant </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form [formGroup]="etudDetail">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> Prenom </label>
+              <input type="text" formControlName="first_name" class="form-control" id="first_name"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nom </label>
+              <input type="text" formControlName="last_name" class="form-control" id="last_name"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="form-floating mb-3">
+              <option value="">Selectionner la Filiere</option>
+              <select class="form-select" formControlName="filiere" aria-label="Default select example">
+                <option selected>GIT</option>
+                <option value="GME">GME</option>
+                <option value="GEEA">GEEA</option>
+                <option value="GEOLOGIE">GEOLOGIE</option>
+                <option value="GENIE CIVIL">GENIE CIVIL</option>
+                <option value="TOPOLOGIE">TOPOLOGIE</option>
+              </select>
+            </div>
+            <div class="form-floating mb-3">
+              <option value="">Selectionner la classe</option>
+              <select class="form-select" formControlName="classe" aria-label="Default select example">
+                <option value="DUT">DUT</option>
+                <option value="TECHNICIEN SUPERIEUR">TECHNICIEN SUPERIEUR</option>
+                <option value="LICENCE 1">LICENCE 1</option>
+                <option value="LICENCE 2">LICENCE 2</option>
+                <option value="LICENCE 3">LICENCE 3</option>
+                <option value="MASTER 1">MASTER 1</option>
+                <option value="MASTER 2">MASTER 2</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Tel </label>
+              <input type="text" formControlName="tel" class="form-control" id="tel" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email </label>
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Matricule </label>
+              <input type="email" formControlName="matricule" class="form-control" id="email"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Mot de Passe </label>
+              <input type="password" formControlName="motPasse" class="form-control" id="email"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-outline-success" (click)="updateStudent()"
+                data-bs-dismiss="modal">Mettre à jour </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

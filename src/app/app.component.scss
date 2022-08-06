@@ -1,0 +1,57 @@
+h1 a{
+    font-family:'Courier New', Courier, monospace;
+}
+.bg-primary1{
+    background-color: darkblue; 
+    box-shadow: 4px 4px 10px rgb(34, 34, 34) inset, 3px 3px 5px rgb(196, 196, 196);
+}
+.bg-primary1 i{
+    color: white;
+   
+}
+
+.a {
+    color: #fff;
+    background-color: #333;
+    transition: all 1s ease-out;
+    
+  }
+  li{
+    margin: 2px;
+  }
+  
+  .a:hover,
+  .a:focus, .a:active {
+    color: #333;
+    background-color: rgb(178, 175, 220);
+  }
+  //CSS SUR LE BUTTON DE MESSAGE
+  .message{
+    transition: all 1s ease-out;
+    background-color: #f1c00f;
+    border-radius: 5px;
+  }
+  .message a i{
+    color: blue;
+  }
+  .message:hover, .message:focus{
+    color: cyan;
+    background-color: honeydew;
+  }
+
+  //SUR LA PARTIE DECONNEXION
+
+  .deconnecter{
+    transition: all 1s ease-out;
+    background-color: #322f2e;
+    border-radius: 5px;
+  }
+
+  .deconnecter:hover,.deconnecter:focus{
+    color: gainsboro;
+    background-color: #f71313;
+  }
+  .deconnecter a :hover,.deconnecter a:focus{
+    color: gainsboro;
+    
+  }

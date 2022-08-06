@@ -1,0 +1,22 @@
+h1{
+    border-bottom: 2px solid black;
+    
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+    font-style: italic;
+    opacity: 0.5;
+    color: cornflowerblue;
+}
+.container1{
+    margin: auto;
+    width: 65em;
+    height: 30em;
+    padding: 35px;
+    background-color: aliceblue;
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px black inset,2px 2px 4px black;
+}
+span{
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px rgb(178, 167, 167);
+}
