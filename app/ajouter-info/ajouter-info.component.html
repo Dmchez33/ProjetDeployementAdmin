@@ -1,0 +1,42 @@
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="card border-0 shadow p-3 col">
+        <div class="form-floating mb-3 tetx-center">
+            <h5 class="text-center text-warning">Ajouter Information</h5>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="titre">
+            <label for="firstname">Titre</label>
+        </div>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="filiere">
+            <option selected> Selectionner la Filiere</option>
+            <option value="GIT">GIT</option>          
+            <option value="GME">GME</option>          
+            <option value="GEEA">GEEA</option>          
+            <option value="GEEA">GEOLOGIE</option>          
+            <option value="GEEA">GENIE CIVIL</option>          
+            <option value="GEEA">TOPOLOGIE</option>
+        </select>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="classe">
+            <option selected>Selectionner la Classe</option>
+            <option value="DUT">DUT</option>
+            <option value="TECHNICIEN">TECHNICIEN SUPERIEUR</option>
+            <option value="LICENCE 1">LICENCE 1</option>
+            <option value="LICENCE 2">LICENCE 2</option>
+            <option value="LICENCE 3">LICENCE 3</option>
+            <option value="MASTER 1">MASTER 1</option>
+            <option value="MASTER 2">MASTER 2</option>
+        </select>
+        <div class="mb-3">
+            <textarea class="form-control" [(ngModel)]="contenu" name="contenu" id="exampleFormControlTextarea1" rows="5">Contenu</textarea>
+        </div>
+        <div class="alert alert-dark" role="alert" *ngIf="isInf">
+            information a bien été envoyé
+        </div>
+        <button type="button" class="btn btn-outline-success" (click)="addStudent()">Envoyer</button>
+    </div>
+    <div class="col-1"></div>
+</div>
+   
+
